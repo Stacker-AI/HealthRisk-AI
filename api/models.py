@@ -1,5 +1,12 @@
 from django.db import models
 
+class Doctor(models.Model):
+    firstName = models.CharField(max_length=30)
+    lastName = models.CharField(max_length=30)
+    email = models.EmailField()
+    specialization = models.CharField(max_length=10)
+    availability = models.BooleanField(default=True)
+
 class Patient(models.Model):
     firstName = models.CharField(max_length=30)
     lastName = models.CharField(max_length=30)
@@ -15,13 +22,7 @@ class Patient(models.Model):
     fruit = models.BooleanField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.firstName
-
 class Result(models.Model):
     patientID = models.ForeignKey(Patient, on_delete=models.CASCADE)
     attackRisk = models.BooleanField()
     timestamp = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.attackRisk

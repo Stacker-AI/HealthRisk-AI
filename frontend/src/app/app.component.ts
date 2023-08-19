@@ -9,22 +9,24 @@ import { Observable } from 'rxjs';
 })
 
 export class AppComponent implements OnInit {
-  loadedPosts = [];
+  loadedDoctors = [];
+  DoctorData = { firstName: '', lastName: '', email: '', specialization: '', availability: false, };
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.onFetchDoctors();
+  }
 
-  onCreateDoctor(DoctorData: { name: string; bio: string }) {
+  onCreateDoctor(DoctorData: {firstName: string; lastName: string; email: string; specialization: string; availability: boolean;}) {
     // Send Http request
-  this.http.post('http://127.0.0.1:8000',DoctorData)
+  this.http.post('http://127.0.0.1:8000/doctors/',DoctorData)
   .subscribe(responseData=>{console.log(responseData);});
   } 
 
-  onFetchPosts() {
-    this.http.get('http://127.0.0.1:8000')
-    .subscribe(doctor=>{
-      console.log(doctor);
+  onFetchDoctors() {
+    this.http.get('http://127.0.0.1:8000/doctors/').subscribe((doctors: any) => {
+      this.loadedDoctors = doctors;  // Store the received data in the component variable
     });
   }
 

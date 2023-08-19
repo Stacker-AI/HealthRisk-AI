@@ -3,32 +3,67 @@
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <form #DoctorForm="ngForm" (ngSubmit)="onCreateDoctor(DoctorForm.value)">
         <div class="form-group">
-          <label for="title">Name</label>
+          <label for="title">First Name</label>
           <input
             type="text"
             class="form-control"
-            id="title"
+            id="firstName"
             required
-            ngModel
-            name="title"
+            [(ngModel)]="DoctorData.firstName"
+            name="firstName"
           />
         </div>
         <div class="form-group">
-          <label for="content">Bio</label>
-          <textarea
+          <label for="content">Last Name</label>
+          <input
+            type="text"
             class="form-control"
-            id="content"
+            id="lastName"
             required
-            ngModel
-            name="content"
-          ></textarea>
+            [(ngModel)]="DoctorData.lastName"
+            name="lastName"
+          />
         </div>
+        <div class="form-group">
+          <label for="content">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            required
+            [(ngModel)]="DoctorData.email"
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="content">Specialization</label>
+          <input
+            type="text"
+            class="form-control"
+            id="specialization"
+            required
+            [(ngModel)]="DoctorData.specialization"
+            name="specialization"
+          />
+        </div>
+        <div class="form-group">
+          <label for="content">Availability</label>
+          <input
+            type="text"
+            class="form-control"
+            id="availability"
+            required
+            [(ngModel)]="DoctorData.availability"
+            name="availability"
+          />
+        </div>
+
         <button
           class="btn btn-primary"
           type="submit"
           [disabled]="!DoctorForm.valid"
         >
-          Send Post
+          Add Doctor
         </button>
       </form>
     </div>
@@ -36,22 +71,18 @@
   <hr />
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <button class="btn btn-primary" (click)="onFetchPosts()">
-        Fetch Posts
-      </button>
-      |
-      <button
-        class="btn btn-danger"
-        [disabled]="loadedPosts.length < 1"
-        (click)="onClearPosts()"
-      >
-        Clear doctors
-      </button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <p>No doctors available!</p>
+      <div *ngIf="loadedDoctors.length > 0">
+        <h2>Available Doctors</h2>
+        <ul>
+          <li *ngFor="let doctor of loadedDoctors">
+            {{ doctor.firstName }} {{ doctor.lastName }} -
+            {{ doctor.specialization }}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="loadedDoctors.length === 0">
+        <p>No doctors available!</p>
+      </div>
     </div>
   </div>
 </div>

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   loadedPosts = [];
 
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
 
   onCreateDoctor(DoctorData: { name: string; bio: string }) {
     // Send Http request
-  this.http.post('https://scrum-day-3-default-rtdb.firebaseio.com/doctor.json',DoctorData)
+  this.http.post('http://127.0.0.1:8000',DoctorData)
   .subscribe(responseData=>{console.log(responseData);});
   } 
 

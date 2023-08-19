@@ -17,6 +17,8 @@ The HealthRiskAI App is designed to predict the risk of a heart attack using mac
 
 ## Setup and Running the App
 
+### Backend
+
 1. Clone this repository:
   ```
 git clone https://github.com/Stacker-AI/HealthRiskAI.git
@@ -50,6 +52,13 @@ python manage.py runserver
   ```
 http://localhost:8000/
   ```
+
+### Frontend
+
+1. Run the Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+
 ## Using the App
 
 1. Access the web interface by visiting the provided URL.

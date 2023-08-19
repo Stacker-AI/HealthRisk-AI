@@ -33,8 +33,7 @@ python3 -m venv venv
   ```
 4. Activate the virtual environment:
   ```
-On Windows: venv\Scripts\activate
-On macOS and Linux: source venv/bin/activate
+venv\Scripts\activate
   ```
 5. Install the required dependencies:
   ```
@@ -58,6 +57,8 @@ http://localhost:8000/
 1. Run the Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+
+2. Browse the App 🙂
 
 ## Using the App
 

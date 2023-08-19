@@ -19,18 +19,13 @@ export class AppComponent implements OnInit {
   }
 
   onCreateDoctor(DoctorData: {firstName: string; lastName: string; email: string; specialization: string; availability: boolean;}) {
-    // Send Http request
   this.http.post('http://127.0.0.1:8000/doctors/',DoctorData)
   .subscribe(responseData=>{console.log(responseData);});
   } 
 
   onFetchDoctors() {
     this.http.get('http://127.0.0.1:8000/doctors/').subscribe((doctors: any) => {
-      this.loadedDoctors = doctors;  // Store the received data in the component variable
+      this.loadedDoctors = doctors;
     });
-  }
-
-  onClearPosts() {
-    // Send Http request
   }
 }

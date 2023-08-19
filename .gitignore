@@ -1,4 +1,4 @@
-djenv/
+venv/
 __pycache__/
 
 *.env

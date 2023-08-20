@@ -49,4 +49,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-api/ml_model/RandomForest_Model.joblib
+api/ml_model/RandomForestClassifier.joblib

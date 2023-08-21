@@ -1,18 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <form #DoctorForm="ngForm" (ngSubmit)="onCreateDoctor(DoctorForm.value)">
+      <form
+        #PatientForm="ngForm"
+        (ngSubmit)="onCreatePatient(PatientForm.value)"
+      >
         <div class="form-group">
-          <label for="title">First Name</label>
+          <label for="content">First Name</label>
           <input
             type="text"
             class="form-control"
             id="firstName"
             required
-            [(ngModel)]="DoctorData.firstName"
+            [(ngModel)]="PatientData.firstName"
             name="firstName"
           />
         </div>
+
         <div class="form-group">
           <label for="content">Last Name</label>
           <input
@@ -20,69 +24,349 @@
             class="form-control"
             id="lastName"
             required
-            [(ngModel)]="DoctorData.lastName"
+            [(ngModel)]="PatientData.lastName"
             name="lastName"
           />
         </div>
+
         <div class="form-group">
-          <label for="content">Email</label>
-          <input
-            type="text"
+          <label for="content">High Blood Pressure</label>
+          <select
             class="form-control"
-            id="email"
+            id="highBP"
             required
-            [(ngModel)]="DoctorData.email"
-            name="email"
-          />
+            [(ngModel)]="PatientData.highBP"
+            name="highBP"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
         </div>
+
         <div class="form-group">
-          <label for="content">Specialization</label>
-          <input
-            type="text"
+          <label for="content">High Cholesterol</label>
+          <select
             class="form-control"
-            id="specialization"
+            id="highChol"
             required
-            [(ngModel)]="DoctorData.specialization"
-            name="specialization"
-          />
+            [(ngModel)]="PatientData.highChol"
+            name="highChol"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
         </div>
+
         <div class="form-group">
-          <label for="content">Availability</label>
-          <input
-            type="text"
+          <label for="content">Cholesterol Check</label>
+          <select
             class="form-control"
-            id="availability"
+            id="cholCheck"
             required
-            [(ngModel)]="DoctorData.availability"
-            name="availability"
+            [(ngModel)]="PatientData.cholCheck"
+            name="cholCheck"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">BMI </label>
+          <input
+            type="range"
+            class="form-control"
+            id="bmi"
+            required
+            [(ngModel)]="PatientData.bmi"
+            name="bmi"
+            min="10"
+            max="90"
           />
+
+          <p>Value: {{ PatientData.bmi }}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Smoker</label>
+          <select
+            class="form-control"
+            id="smoker"
+            required
+            [(ngModel)]="PatientData.smoker"
+            name="smoker"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Stroke</label>
+          <select
+            class="form-control"
+            id="stroke"
+            required
+            [(ngModel)]="PatientData.stroke"
+            name="stroke"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Diabetes</label>
+          <input
+            type="range"
+            class="form-control"
+            id="diabetes"
+            required
+            [(ngModel)]="PatientData.diabetes"
+            name="diabetes"
+            min="0"
+            max="2"
+          />
+
+          <p>Value: {{ PatientData.diabetes }}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Physical Activity</label>
+          <select
+            class="form-control"
+            id="physActivity"
+            required
+            [(ngModel)]="PatientData.physActivity"
+            name="physActivity"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Fruits Consumption</label>
+          <select
+            class="form-control"
+            id="fruits"
+            required
+            [(ngModel)]="PatientData.fruits"
+            name="fruits"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Vegetables Consumption</label>
+          <select
+            class="form-control"
+            id="veggies"
+            required
+            [(ngModel)]="PatientData.veggies"
+            name="veggies"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Heavy Alcohol Consumption</label>
+          <select
+            class="form-control"
+            id="hvyAlcoholConsump"
+            required
+            [(ngModel)]="PatientData.hvyAlcoholConsump"
+            name="hvyAlcoholConsump"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Any Health Care</label>
+          <select
+            class="form-control"
+            id="anyHealthcare"
+            required
+            [(ngModel)]="PatientData.anyHealthcare"
+            name="anyHealthcare"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">No Doctor Because of Money</label>
+          <select
+            class="form-control"
+            id="noDocbcCost"
+            required
+            [(ngModel)]="PatientData.noDocbcCost"
+            name="noDocbcCost"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">General Health</label>
+          <input
+            type="range"
+            class="form-control"
+            id="genHlth"
+            required
+            [(ngModel)]="PatientData.genHlth"
+            name="genHlth"
+            min="1"
+            max="5"
+          />
+
+          <p>Value: {{ PatientData.genHlth }}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Mental Health</label>
+          <input
+            type="range"
+            class="form-control"
+            id="mentHlth"
+            required
+            [(ngModel)]="PatientData.mentHlth"
+            name="mentHlth"
+            min="0"
+            max="30"
+          />
+
+          <p>Value: {{ PatientData.mentHlth }}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Physical Health</label>
+          <input
+            type="range"
+            class="form-control"
+            id="physHlth"
+            required
+            [(ngModel)]="PatientData.physHlth"
+            name="physHlth"
+            min="1"
+            max="100"
+          />
+
+          <p>Value: {{ PatientData.physHlth }}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Difficulty Walking</label>
+          <select
+            class="form-control"
+            id="diffWalk"
+            required
+            [(ngModel)]="PatientData.diffWalk"
+            name="diffWalk"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Sex</label>
+          <select
+            class="form-control"
+            id="sex"
+            required
+            [(ngModel)]="PatientData.sex"
+            name="sex"
+          >
+            <option value="true">Male</option>
+            <option value="false">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Age</label>
+          <input
+            type="range"
+            class="form-control"
+            id="age"
+            required
+            [(ngModel)]="PatientData.age"
+            name="age"
+            min="18"
+            max="100"
+          />
+
+          <p>Value: {{ PatientData.age }}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Education</label>
+          <input
+            type="range"
+            class="form-control"
+            id="education"
+            required
+            [(ngModel)]="PatientData.education"
+            name="education"
+            min="1"
+            max="6"
+          />
+
+          <p>Value: {{ PatientData.education }}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Income</label>
+          <input
+            type="range"
+            class="form-control"
+            id="income"
+            required
+            [(ngModel)]="PatientData.income"
+            name="income"
+            min="1"
+            max="8"
+          />
+
+          <p>Value: {{ PatientData.income }}</p>
         </div>
 
         <button
           class="btn btn-primary"
           type="submit"
-          [disabled]="!DoctorForm.valid"
+          [disabled]="!PatientForm.valid"
         >
-          Add Doctor
+          Add Patient
         </button>
       </form>
     </div>
   </div>
   <hr />
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <div *ngIf="loadedDoctors.length > 0">
-        <h2>Available Doctors</h2>
-        <ul>
-          <li *ngFor="let doctor of loadedDoctors">
-            {{ doctor.firstName }} {{ doctor.lastName }} -
-            {{ doctor.specialization }}
-          </li>
-        </ul>
-      </div>
-      <div *ngIf="loadedDoctors.length === 0">
-        <p>No doctors available!</p>
-      </div>
-    </div>
-  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Heart Attack Risk</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="loadedPatients.length > 0">
+      <tr *ngFor="let patient of loadedPatients; let i = index">
+        <td>{{ patient.firstName }} {{ patient.lastName }}</td>
+        <td>{{ loadedResults[i].attackRisk }}</td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="loadedPatients.length === 0">
+      <tr>
+        <td colspan="2">No patients available!</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

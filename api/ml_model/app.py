@@ -11,7 +11,7 @@ class Prediction:
         columns_to_scale = ['bmi', 'diabetes', 'genHlth', 'mentHlth', 'physHlth', 'age', 'education', 'income']
         columns_to_transform = ['highBP', 'highChol', 'cholCheck', 'smoker', 'stroke', 'physActivity', 'fruits', 'veggies', 'hvyAlcoholConsump', 'anyHealthcare', 'noDocbcCost', 'diffWalk', 'sex']
         df[columns_to_scale] = scaler.transform(df[columns_to_scale])
-        df[columns_to_transform] = df[columns_to_transform].astype(int)
+        df[columns_to_transform] = df[columns_to_transform].replace({'true': True, 'false': False}).astype(int)
         df_toPredict = df[['highBP', 'highChol', 'cholCheck', 'bmi', 'smoker', 'stroke', 'diabetes', 'physActivity', 'fruits', 'veggies', 'hvyAlcoholConsump', 'anyHealthcare', 'noDocbcCost', 'genHlth', 'mentHlth', 'physHlth', 'diffWalk', 'sex', 'age', 'education', 'income']]
         return df_toPredict
     

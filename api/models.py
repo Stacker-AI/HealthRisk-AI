@@ -14,7 +14,7 @@ class Patient(models.Model):
     highBP = models.BooleanField()
     highChol = models.BooleanField()
     cholCheck = models.BooleanField()
-    bmi = models.DecimalField(max_digits=10, decimal_places=2)
+    bmi = models.PositiveIntegerField(validators=[MinValueValidator(10), MaxValueValidator(100)])
     smoker = models.BooleanField()
     stroke = models.BooleanField()
     diabetes = models.PositiveIntegerField(validators=[MinValueValidator(0), MaxValueValidator(2)])

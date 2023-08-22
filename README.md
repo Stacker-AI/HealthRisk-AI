@@ -25,8 +25,8 @@ git clone https://github.com/Stacker-AI/HealthRiskAI-FullStack.git
   ```
 2. Navigate to the project directory:
   ```
-cd venv\Scripts\activate
-  ```
+cd HealthRiskAI-FullStack
+```
 3. Create a virtual environment:
   ```
 python3 -m venv venv
@@ -48,6 +48,8 @@ pip install -r requirements.txt
 python manage.py makemigrations
 
 python manage.py migrate
+
+python manage.py migrate --run-syncdb
   ```
 7. Start the development server:
   ```

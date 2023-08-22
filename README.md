@@ -35,6 +35,10 @@ python3 -m venv venv
   ```
 venv\Scripts\activate
   ```
+Extra Step: 
+  ```
+Add all Django env to the path.
+  ```
 5. Install the required dependencies:
   ```
 pip install -r requirements.txt

@@ -25,7 +25,7 @@ git clone https://github.com/Stacker-AI/HealthRiskAI-FullStack.git
   ```
 2. Navigate to the project directory:
   ```
-cd HealthRiskAI
+cd venv\Scripts\activate
   ```
 3. Create a virtual environment:
   ```

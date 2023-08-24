@@ -1,0 +1,13 @@
+<form #myForm="ngForm" (ngSubmit)="SubmitForm()">
+
+    <div *ngFor="let mcq of mcqs; let i=index">
+        <h3>{{mcq.question}}</h3>
+        <div *ngFor="let option of mcq.options; let j=index">
+            <input type="radio" [name]="'mcq'+i" [value]="j" [(ngModel)]="SelectedOptions[i]">
+            <label>{{option}}</label><br>
+        </div>
+        <br><br>
+    </div>
+
+    <button type="submit()">Submit</button>
+</form>

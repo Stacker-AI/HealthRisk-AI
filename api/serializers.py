@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Patient, Result, Doctor
+from .models import Patient, Result, Doctor, PatientHealthData
 
 class DoctorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta():
@@ -14,4 +14,9 @@ class ResultSerializer(serializers.HyperlinkedModelSerializer):
 class PatientSerializer(serializers.HyperlinkedModelSerializer):
     class Meta():
         model = Patient
+        fields = '__all__'
+
+class PatientHealthDataSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta():
+        model = PatientHealthData
         fields = '__all__'

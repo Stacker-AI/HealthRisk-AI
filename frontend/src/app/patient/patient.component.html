@@ -1,0 +1,13 @@
+<form #myForm="ngForm" (ngSubmit)="OnPatientSignUp()">
+
+    <label>First Name</label><br>
+    <input type="text" [(ngModel)]="patient.FirstName" name="firstname" required><br>
+
+    <label>Last Name</label><br>
+    <input type="text" [(ngModel)]="patient.LastName" name="lastname" required><br>
+
+    <label>Email</label><br>
+    <input type="email" [(ngModel)]="patient.Email" name="email" required><br>
+
+    <button type="submit" >Submit</button>
+</form>

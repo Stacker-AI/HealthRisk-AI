@@ -7,7 +7,7 @@ router = DefaultRouter()
 router.register(r'results', api_views.resultViewSet, basename='result')
 router.register(r'patients', api_views.patientViewSet, basename='patient')
 router.register(r'doctors', api_views.doctorViewSet, basename='doctor')
-
+router.register(r'patientsdata', api_views.patientHealthDataViewSet, basename='patientdata')
 urlpatterns = router.urls
 
 urlpatterns += [

@@ -1,0 +1,50 @@
+
+<h3>Available Doctors are listed here ! </h3><br><br>
+
+<h2>Online</h2>
+
+
+
+<table>
+    <thead>
+      <tr>
+        <th>Online Status</th>
+        <th>Unavailable</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Available doctors -->
+      <ng-container *ngIf="Doc1Visible" >
+        <tr *ngFor="let FakeDoc of FakeDocs1" >
+          <td [ngStyle]="{backgroundColor:getColor()}">{{ FakeDoc }}</td>
+        </tr>
+      </ng-container>
+
+      <ng-container *ngIf="Doc2Visible">
+        <tr *ngFor="let FakeDoc of FakeDocs2">
+          <td [ngStyle]="{backgroundColor:getColors()}">{{ FakeDoc }}</td>
+        </tr>
+      </ng-container>
+      <!-- Unavailable doctors -->
+      <ng-container *ngIf="!Doc1Visible">
+        <tr *ngFor="let FakeDoc of FakeDocs1">
+          <td></td>
+          <td [ngStyle]="{backgroundColor:getColor()}">{{ FakeDoc }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <button (click)="OnRefresh()">Refresh</button>
+
+  <div>
+    
+  </div><br><br>
+
+  <label>Enter the doctor name :  </label><br><br>
+  <input type="text" name="doctor" [(ngModel)]="DocName"><br><br>
+  <button (click)="OnDocName()">Submit</button>
+  
+  
+  
+  

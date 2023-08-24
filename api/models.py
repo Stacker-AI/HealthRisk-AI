@@ -11,6 +11,10 @@ class Doctor(models.Model):
 class Patient(models.Model):
     firstName = models.CharField(max_length=30)
     lastName = models.CharField(max_length=30)
+    email = models.EmailField()
+
+class PatientHealthData(models.Model):
+    patientID = models.ForeignKey(Patient, on_delete=models.CASCADE)
     highBP = models.BooleanField()
     highChol = models.BooleanField()
     cholCheck = models.BooleanField()

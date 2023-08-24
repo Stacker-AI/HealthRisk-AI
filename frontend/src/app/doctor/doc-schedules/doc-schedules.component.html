@@ -1,0 +1,21 @@
+<h4>Dr. {{receivedDocName}} schedules for  today : </h4>
+<p>{{TodayDate | date }} </p>
+
+
+<div *ngIf="PatientReceived">
+<table >
+    <thead>
+        <tr>
+        <th>Requested By</th>
+        <th>Pending</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ReceivedPatientName}}</td>
+        </tr>
+    </tbody>
+
+
+</table>
+</div>

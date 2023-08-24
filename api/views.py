@@ -1,5 +1,5 @@
-from .models import Patient, Result, Doctor
-from .serializers import PatientSerializer, ResultSerializer, DoctorSerializer
+from .models import Patient, Result, Doctor, PatientHealthData
+from .serializers import PatientSerializer, ResultSerializer, DoctorSerializer, PatientHealthDataSerializer
 from rest_framework import viewsets, permissions, status
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -17,9 +17,14 @@ class patientViewSet(viewsets.ModelViewSet):
     serializer_class = PatientSerializer
     permission_classes = [permissions.AllowAny]
 
+class patientHealthDataViewSet(viewsets.ModelViewSet):
+    queryset = PatientHealthData.objects.all()
+    serializer_class = PatientHealthDataSerializer
+    permission_classes = [permissions.AllowAny]
+
     def create(self, request, *args, **kwargs):
         data = request.data
-        patient_instance, created = Patient.objects.get_or_create(**data)
+        patient_instance, created = PatientHealthData.objects.get_or_create(**data)
         predicted_data = pred.main(data)
 
         result_data = {'patientID': reverse('patient-detail', kwargs={'pk': patient_instance.pk}, request=request),'attackRisk': int(predicted_data)}

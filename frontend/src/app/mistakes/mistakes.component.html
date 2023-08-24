@@ -1,0 +1,86 @@
+<p>mistakes works!</p>
+<div>
+<form #myForm="ngForm" (ngSubmit)="SubmitForm()">
+
+    <h3>What is the mechanism of action of the drug "Lisinopril"?</h3>
+        <input type="radio" name="UserRole" value="mcq1" [(ngModel)]="SelectedOption1">
+        <label>It's an antibiotic targeting bacterial cell walls.</label><br>
+
+        <input type="radio" name="UserRole" value="mcq2" [(ngModel)]="SelectedOption2">
+        <label>It's an ACE inhibitor used to treat hypertension.</label><br>
+
+        <input type="radio" name="UserRole" value="mcq3" [(ngModel)]="SelectedOption3">
+        <label>It's a beta-blocker used for heart rate control.</label><br>
+
+        <input type="radio" name="UserRole" value="mcq4" [(ngModel)]="SelectedOption4">
+        <label> It's a diuretic promoting water excretion.</label>
+
+<br><br><br>
+
+        <h3>Which of the following is a symptom of Type 2 diabetes?</h3>
+
+        <input type="radio" name="UserRole2" value="mcq5" [(ngModel)]="SelectedOption5">
+        <label> Insomnia</label><br>
+        
+        <input type="radio" name="UserRole2" value="mcq6" [(ngModel)]="SelectedOption6">
+        <label> Persistent thirst and hunger</label><br>
+
+        <input type="radio" name="UserRole2" value="mcq7" [(ngModel)]="SelectedOption7">
+        <label>Visual hallucinations.</label><br>
+
+        <input type="radio" name="UserRole2" value="mcq8" [(ngModel)]="SelectedOption8">
+        <label>Joint pain.</label>
+
+        <br><br><br>
+
+        <h3>Which medical imaging technique is commonly used to visualize soft tissues like the brain?</h3>
+
+        <input type="radio" name="UserRole3" value="mcq9" [(ngModel)]="SelectedOption9">
+        <label> X-ray</label><br>
+        
+        <input type="radio" name="UserRole3" value="mcq10" [(ngModel)]="SelectedOption10">
+        <label>Ultrasound</label><br>
+
+        <input type="radio" name="UserRole3" value="mcq11" [(ngModel)]="SelectedOption11">
+        <label>Magnetic Resonance Imaging (MRI)</label><br>
+
+        <input type="radio" name="UserRole3" value="mcq12" [(ngModel)]="SelectedOption12">
+        <label> Positron Emission Tomography (PET)</label><br>
+
+
+        <br><br><br>
+
+        <h3>What is the recommended treatment for a patient with a severe allergic reaction (anaphylaxis)?</h3>
+
+        <input type="radio" name="UserRole4" value="mcq13" [(ngModel)]="SelectedOption13">
+        <label> Over-the-counter pain relievers</label><br>
+        
+        <input type="radio" name="UserRole4" value="mcq14" [(ngModel)]="SelectedOption14">
+        <label>Drinking plenty of fluids</label><br>
+
+        <input type="radio" name="UserRole4" value="mcq15" [(ngModel)]="SelectedOption15">
+        <label>Administering an epinephrine injection</label><br>
+
+        <input type="radio" name="UserRole4" value="mcq16" [(ngModel)]="SelectedOption16">
+        <label>Applying a topical cream</label><br>
+
+        <h3>Which of the following conditions is characterized by chronic inflammation of the airways, leading to breathing</h3>
+
+        <input type="radio" name="UserRole5" value="mcq17" [(ngModel)]="SelectedOption17">
+        <label>  Pneumonia</label><br>
+        
+        <input type="radio" name="UserRole5" value="mcq18" [(ngModel)]="SelectedOption18">
+        <label> Tuberculosis</label><br>
+
+        <input type="radio" name="UserRole5" value="mcq19" [(ngModel)]="SelectedOption19">
+        <label>Asthma</label><br>
+
+        <input type="radio" name="UserRole5" value="mcq20" [(ngModel)]="SelectedOption20">
+        <label> Osteoarthritis </label><br><br>
+
+
+    <button type="sumbit()">Submit</button>
+
+
+     </form>
+</div>

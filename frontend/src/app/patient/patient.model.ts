@@ -1,13 +1,13 @@
 export class Patient{
-    public FirstName!: string;
-    public LastName! : string;
-    public Email!: string;
+    public firstName!: string;
+    public lastName! : string;
+    public email!: string;
 
     constructor(firstname:string,lastname:string,email:string)
     {
-        this.FirstName=firstname;
-        this.LastName=lastname;
-        this.Email=email;
+        this.firstName=firstname;
+        this.lastName=lastname;
+        this.email=email;
     }
 
    

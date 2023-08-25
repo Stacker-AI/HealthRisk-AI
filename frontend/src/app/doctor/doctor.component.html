@@ -1,19 +1,21 @@
-<form #myForm="ngForm" (ngSubmit)="OnDocSignUp()">
+<form #myForm="ngForm" (ngSubmit)="OnDocSignUp(myForm.value)">
 
     <label>First Name</label><br>
-    <input type="text" [(ngModel)]="doctor.FirstName" name="firstname" required><br>
+    <input type="text" [(ngModel)]="doctor.firstName" name="firstName" required><br>
 
     <label>Last Name</label><br>
-    <input type="text" [(ngModel)]="doctor.LastName" name="lastname" required><br>
+    <input type="text" [(ngModel)]="doctor.lastName" name="lastName" required><br>
 
     <label>Email</label><br>
-    <input type="email" [(ngModel)]="doctor.Email" name="email" required><br>
+    <input type="email" [(ngModel)]="doctor.email" name="email" required><br>
 
     <label>Medical Specialization</label><br>
-    <input type="text" [(ngModel)]="doctor.MedicalSpecialization" name="Specialization" required><br>
+    <input type="text" [(ngModel)]="doctor.specialization" name="specialization" required><br>
 
-    <label>Availablitiy schedule</label><br>
-    <input type="text"  name="availability" [(ngModel)]="doctor.Availability"><br><br>
+    <label>Availablitiy </label><br>
+    <input type="checkbox"  name="availability" [(ngModel)]="doctor.availability"><br><br>
+
+   
 
     <button type="submit" >Submit</button>
 </form>

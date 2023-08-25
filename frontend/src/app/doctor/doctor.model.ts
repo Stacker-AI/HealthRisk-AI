@@ -1,19 +1,19 @@
 export class Doctor
 {
-    public FirstName!: string;
-    public LastName! : string;
-    public Email!: string;
-    public MedicalSpecialization!:string;
-    public Availability!:string;
+    public firstName!: string;
+    public lastName! : string;
+    public email!: string;
+    public specialization!:string;
+    public availability!:string;
   
 
-    constructor(firstname:string,lastname:string,email:string,spec:string,avail:string)
+    constructor(firstname:string,lastname:string,email:string,specialization:string,availability:string)
     {
-        this.FirstName=firstname;
-        this.LastName=lastname;
-        this.Email=email;
-        this.MedicalSpecialization=spec;
-        this.Availability=avail;
+        this.firstName=firstname;
+        this.lastName=lastname;
+        this.email=email;
+        this.specialization=specialization;
+        this.availability=availability;
         
     }
     

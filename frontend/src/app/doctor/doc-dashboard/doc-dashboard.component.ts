@@ -8,29 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './doc-dashboard.component.html',
   styleUrls: ['./doc-dashboard.component.css']
 })
-export class DocDashboardComponent implements OnInit  {
+export class DocDashboardComponent  {
 
-  receiveDoc: Doctor | null=null;
-
-  constructor(public doctorService:DoctorDataService,private route:ActivatedRoute){
-    console.log("i am constructor");
-
-  }
-
-  ngOnInit() {
-    // console.log("i am ngoninit");
-    // this.doctorService.doctor$.subscribe(doctor=>{
-    //   this.receiveDoc=doctor;
-    //   console.log("Received doctor : ");
-      
-    // });
-
-    const SerializedDoctor=this.route.snapshot.queryParams['doctor'];
-    if(SerializedDoctor){
-      this.receiveDoc=JSON.parse(SerializedDoctor);
-    }
-  }
-
+  
   
 
  

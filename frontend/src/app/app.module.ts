@@ -20,7 +20,7 @@ import { DocPrescriptionComponent } from './doctor/doc-prescription/doc-prescrip
 import { TestComponent } from './test/test.component';
 import { RoutingModule } from './routing/routing.module';
 import { DoctorDataService } from './doctor/doctor.service';
-import { PatientService } from './patient/patient.service';
+import { PatientService } from './patient/patient-services/patient.service';
 import { PatientGuard } from './patient.guard';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';

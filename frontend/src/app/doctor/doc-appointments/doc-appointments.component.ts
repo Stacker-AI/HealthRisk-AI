@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./doc-appointments.component.css']
 })
 export class DocAppointmentsComponent {
-
+  
 }

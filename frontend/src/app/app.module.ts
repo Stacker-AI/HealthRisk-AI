@@ -25,6 +25,8 @@ import { PatientGuard } from './patient.guard';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { PatientanalysisComponent } from './patientanalysis/patientanalysis.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './Material.module';
 
 
 @NgModule({
@@ -47,7 +49,7 @@ import { PatientanalysisComponent } from './patientanalysis/patientanalysis.comp
     PatientanalysisComponent,
    ],
   imports: [BrowserModule, FormsModule, HttpClientModule, 
-    RoutingModule],
+    RoutingModule, BrowserAnimationsModule,MaterialModule],
   providers: [PatientService,PatientGuard],
   bootstrap: [AppComponent]
 })

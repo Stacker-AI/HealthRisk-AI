@@ -1,21 +1,27 @@
-<form #myForm="ngForm" (ngSubmit)="OnDocSignUp(myForm.value)">
+<form #myForm="ngForm" (ngSubmit)="OnDocSignUp(myForm.value)" class="doctor-signup-form">
+    <mat-form-field class="form-field">
+        <mat-label>First Name</mat-label>
+        <input type="text" [(ngModel)]="doctor.firstName" name="firstName" matInput required>
+    </mat-form-field>
 
-    <label>First Name</label><br>
-    <input type="text" [(ngModel)]="doctor.firstName" name="firstName" required><br>
+    <mat-form-field class="form-field">
+        <mat-label>Last Name</mat-label>
+        <input type="text" [(ngModel)]="doctor.lastName" name="lastName" matInput required>
+    </mat-form-field>
 
-    <label>Last Name</label><br>
-    <input type="text" [(ngModel)]="doctor.lastName" name="lastName" required><br>
+    <mat-form-field class="form-field">
+        <mat-label>Email</mat-label>
+        <input type="email" [(ngModel)]="doctor.email" name="email" matInput required>
+    </mat-form-field>
 
-    <label>Email</label><br>
-    <input type="email" [(ngModel)]="doctor.email" name="email" required><br>
+    <mat-form-field class="form-field">
+        <mat-label>Medical Specialization</mat-label>
+        <input type="text" [(ngModel)]="doctor.specialization" name="specialization" matInput required>
+    </mat-form-field>
 
-    <label>Medical Specialization</label><br>
-    <input type="text" [(ngModel)]="doctor.specialization" name="specialization" required><br>
+    <mat-checkbox class="availability-checkbox" [(ngModel)]="doctor.availability" name="availability">
+        Available
+    </mat-checkbox>
 
-    <label>Availablitiy </label><br>
-    <input type="checkbox"  name="availability" [(ngModel)]="doctor.availability"><br><br>
-
-   
-
-    <button type="submit" >Submit</button>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
 </form>

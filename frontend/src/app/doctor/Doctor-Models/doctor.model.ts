@@ -1,3 +1,5 @@
+import { Time } from "@angular/common";
+
 export class Doctor
 {
     public firstName!: string;
@@ -5,6 +7,7 @@ export class Doctor
     public email!: string;
     public specialization!:string;
     public availability!:string;
+  
   
 
     constructor(firstname:string,lastname:string,email:string,specialization:string,availability:string)
@@ -14,6 +17,7 @@ export class Doctor
         this.email=email;
         this.specialization=specialization;
         this.availability=availability;
+        
         
     }
     

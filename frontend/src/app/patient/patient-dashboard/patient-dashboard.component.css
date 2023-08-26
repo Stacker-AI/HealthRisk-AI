@@ -1,0 +1,20 @@
+/* Style the patient card */
+.patient-card {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .mat-card-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Dark gray text color */
+  }
+  

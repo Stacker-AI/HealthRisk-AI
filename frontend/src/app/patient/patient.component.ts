@@ -27,9 +27,8 @@ export class PatientComponent  {
       .subscribe(
         (response) => {
           console.log('Patient data saved:', response);
-          this.router.navigate(['patients/records'], {
-            queryParams: { PatientData: this.patient }
-          });
+          this.router.navigate(['patients/records']
+           );
         },
         (error) => {
           console.error('Error saving patient data:', error);

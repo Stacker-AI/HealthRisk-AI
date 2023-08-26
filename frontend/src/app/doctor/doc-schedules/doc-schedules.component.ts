@@ -1,38 +1,32 @@
 import { Component,OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Patient } from 'src/app/patient/patient.model';
+import { HttpClient } from '@angular/common/http';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'app-doc-schedules',
   templateUrl: './doc-schedules.component.html',
   styleUrls: ['./doc-schedules.component.css']
 })
-export class DocSchedulesComponent implements OnInit  {
+export class DocSchedulesComponent  {
 
-  receivedDocName!:string;
-  ActualDocName!:string;
-  ReceivedPatientName : Patient|null=null;
+  constructor(private http:HttpClient){}
 
-  PatientReceived=false;
+doctorFreeTime:Time;
 
-  constructor(private route:ActivatedRoute){}
-
-  ngOnInit() {
-    this.route.queryParams.subscribe(params=>{
-      this.receivedDocName=params['docName'];
-    })
-
-    const SerializedDoctor=this.route.snapshot.queryParams['doctor'];
-    if(SerializedDoctor){
-      this.ActualDocName=JSON.parse(SerializedDoctor);
+  OnDocTimeSubmit()
+  {
+    console.log("patient signed in");
+      console.log("patient data : ", this.doctorFreeTime);
+    
+      this.http.post('http://127.0.0.1:8000/doctors/time/', this.doctorFreeTime)
+        .subscribe(
+          (response) => {
+            console.log('doctor time saved:', response);
+          },
+          (error) => {
+            console.error('Error saving doctor time:', error);
+          }
+        );
     }
-
-    this.route.queryParams.subscribe(params=>{
-        this.ReceivedPatientName=params['PatientData'];
-        this.PatientReceived=true;
-        console.log("patient data received queryparams: ",this.ReceivedPatientName);
-    })
+  
   }
-
-  TodayDate:Date=new Date();
-}

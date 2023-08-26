@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Doctor } from './doctor.model';
+import { Doctor } from './Doctor-Models/doctor.model';
 import { Router } from '@angular/router';
 import { DoctorDataService } from './doctor.service';
 import { HttpClient } from '@angular/common/http';
@@ -37,8 +37,8 @@ export class DoctorComponent {
     // }
 
     OnDocSignUp(doctor:Doctor) {
-      console.log("patient signed in");
-      console.log("patient data : ", this.doctor);
+      console.log("doctor signed in");
+      console.log("doctor data : ", this.doctor);
     
       this.http.post('http://127.0.0.1:8000/doctors/', this.doctor)
         .subscribe(

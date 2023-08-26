@@ -1,6 +1,7 @@
-<p>patient-dashboard works!</p>
-<h1 *ngFor="let patient of ComingPatients">
-    {{ComingPatients.firstName}}
-    {{ComingPatients.lastName}}
-    {{ComingPatients.email}}
-</h1>
+<div *ngIf="patientData">
+  <h2>Patient Information</h2>
+  <p><strong>ID:</strong> {{ patientData.id }}</p>
+  <p><strong>First Name:</strong> {{ patientData.firstName }}</p>
+  <p><strong>Last Name:</strong> {{ patientData.lastName }}</p>
+  <p><strong>Email:</strong> {{ patientData.email }}</p>
+</div>

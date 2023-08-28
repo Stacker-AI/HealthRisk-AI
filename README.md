@@ -21,6 +21,7 @@ The HealthRiskAI App is designed to predict the risk of a heart attack using mac
 
 1. Clone this repository:
   ```
+[someLabel](/repository/)
 git clone https://github.com/Stacker-AI/HealthRiskAI-FullStack.git
   ```
 2. Navigate to the project directory:

@@ -21,12 +21,12 @@ The HealthRiskAI App is designed to predict the risk of a heart attack using mac
 
 1. Clone this repository:
   ```
-git clone https://github.com/Stacker-AI/HealthRiskAI-FullStack.git
+git clone https://github.com/Stacker-AI/HealthRisk-AI
   ```
 2. Navigate to the project directory:
   ```
-cd HealthRiskAI
-  ```
+cd HealthRisk-AI
+```
 3. Create a virtual environment:
   ```
 python3 -m venv venv
@@ -45,13 +45,15 @@ pip install -r requirements.txt
   ```
 6. Run database migrations:
   ```
-python manage.py makemigrations
+python3 manage.py makemigrations
 
-python manage.py migrate
+python3 manage.py migrate
+
+python3 manage.py migrate --run-syncdb
   ```
 7. Start the development server:
   ```
-python manage.py runserver
+python3 manage.py runserver
   ```
 8. Access the app in your web browser:
   ```

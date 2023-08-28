@@ -7,6 +7,7 @@ class Doctor(models.Model):
     email = models.EmailField()
     specialization = models.CharField(max_length=10)
     availability = models.BooleanField(default=True)
+   
 
 class Patient(models.Model):
     firstName = models.CharField(max_length=30)

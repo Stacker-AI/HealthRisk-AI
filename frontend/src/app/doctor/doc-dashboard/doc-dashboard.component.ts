@@ -1,36 +1,33 @@
 import { Component,OnInit } from '@angular/core';
-import { DoctorDataService } from '../doctor.service';
-import { Doctor } from '../doctor.model';
-import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { DoctorInterface } from '../Doctor-Models/interface.model';
 
 @Component({
   selector: 'app-doc-dashboard',
   templateUrl: './doc-dashboard.component.html',
   styleUrls: ['./doc-dashboard.component.css']
 })
-export class DocDashboardComponent implements OnInit  {
+export class DocDashboardComponent  {
 
-  receiveDoc: Doctor | null=null;
+  constructor(private http: HttpClient,private route:Router) {}
 
-  constructor(public doctorService:DoctorDataService,private route:ActivatedRoute){
-    console.log("i am constructor");
+  DoctorData: DoctorInterface;
 
+  ngOnInit(): void {
+    this.fetchDoctorData();
   }
 
-  ngOnInit() {
-    // console.log("i am ngoninit");
-    // this.doctorService.doctor$.subscribe(doctor=>{
-    //   this.receiveDoc=doctor;
-    //   console.log("Received doctor : ");
-      
-    // });
-
-    const SerializedDoctor=this.route.snapshot.queryParams['doctor'];
-    if(SerializedDoctor){
-      this.receiveDoc=JSON.parse(SerializedDoctor);
-    }
+  fetchDoctorData() {
+    this.http.get<DoctorInterface>('http://127.0.0.1:8000/patients/1/').subscribe(data => {
+      this.DoctorData = data;
+    });
   }
 
+  OnDocSchedule()
+  {
+    this.route.navigate(['doctors/schedules']);
+  }
   
 
  

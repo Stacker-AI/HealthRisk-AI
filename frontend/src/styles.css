@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Set background color and font for the entire page */
+html, body {
+    height: 50%;
+    background-color: #f5f5f5; /* Light gray background */
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+  }
+  
+  /* Style Angular Material elements */
+  .mat-toolbar {
+    background-color: #333; /* Dark gray background */
+    color: white;
+  }
+  
+  .mat-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-button {
+    background-color: #333; /* Dark gray background */
+    color: white;
+  }
+  
+  /* Style form elements */
+  mat-form-field {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  
+  /* Style buttons */
+  button.mat-raised-button {
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Style input elements */
+  input.mat-input-element {
+    padding: 10px;
+    border: 1px solid #20a50e;
+    border-radius: 5px;
+  }
+  
+  /* Style radio buttons */
+  .mat-radio-button {
+    margin-right: 5px;
+  }
+  

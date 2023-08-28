@@ -12,18 +12,20 @@ import { AboutComponent } from '../about/about.component';
 import { PatientGuard } from '../patient.guard';
 import { AdminComponent } from '../admin/admin.component';
 import { PatientanalysisComponent } from '../patientanalysis/patientanalysis.component';
+import { PatientDashboardComponent } from '../patient/patient-dashboard/patient-dashboard.component';
 
 const routes:Routes=[
 {path:'',component:HomeComponent},
 {path:'about',component:AboutComponent},
 {path:'admin',component:AdminComponent,canActivate:[PatientGuard]},
 {path:'doctor/signup',component:DoctorComponent,canActivate:[PatientGuard]},
-{path:'doctor/dashboard',component:DocDashboardComponent},
+{path:'doctors/dashboard',component:DocDashboardComponent},
 {path:'patients/signup',component:PatientComponent,canActivate:[PatientGuard]},
 {path:'doctors/schedules',component:DocSchedulesComponent},
-{path:'patients/records',component:MedicalRecordsComponent},
+{path:'patients/faisal',component:MedicalRecordsComponent},
 {path:'patients/appointments',component:PatientAppointmentsComponent},
-{path:'patients/faisal',component:PatientanalysisComponent}
+{path:'patients/records',component:PatientanalysisComponent},
+{path:'patients/dashboard',component:PatientDashboardComponent}
 
 
 ];

@@ -1,13 +1,25 @@
-<form #myForm="ngForm" (ngSubmit)="OnPatientSignUp()">
+<form #myForm="ngForm" (ngSubmit)="OnPatientSignUp(myForm.value)">
 
-    <label>First Name</label><br>
-    <input type="text" [(ngModel)]="patient.FirstName" name="firstname" required><br>
+  <div>
+  <mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input matInput type="text" [(ngModel)]="patient.firstName" name="firstname" required>
+  </mat-form-field>
+ </div>
 
-    <label>Last Name</label><br>
-    <input type="text" [(ngModel)]="patient.LastName" name="lastname" required><br>
+ <div>
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input matInput type="text" [(ngModel)]="patient.lastName" name="lastname" required>
+  </mat-form-field>
+  </div>
 
-    <label>Email</label><br>
-    <input type="email" [(ngModel)]="patient.Email" name="email" required><br>
+  <div>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="email" [(ngModel)]="patient.email" name="email" required>
+  </mat-form-field>
+  </div>
 
-    <button type="submit" >Submit</button>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
 </form>

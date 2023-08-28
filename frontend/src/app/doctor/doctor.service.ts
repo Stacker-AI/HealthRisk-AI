@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
-import { Doctor } from "./doctor.model";
+import { Doctor } from "./Doctor-Models/doctor.model";
 
 @Injectable(
     {

@@ -58,7 +58,7 @@ export class PatientAppointmentsComponent implements OnInit {
   OnDocName()
   {
     console.log(this.DocName);
-    this.router.navigate(['doctors/schedules'],{
+    this.router.navigate(['doctors/apointments'],{
       queryParams:{docName:this.DocName}
     });
   }

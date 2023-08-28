@@ -1,11 +1,12 @@
 
 
-<div *ngIf="receiveDoc">
-    <h3>Welcome to your DashBoard Dr.{{receiveDoc.FirstName}}</h3><br><br>
-    <h2>You will see all appointments and schedules here</h2><br><br>
+<div >
+    <h3>Welcome to your DashBoard Dr {{DoctorData.firstName}}</h3><br><br>
+  <p><strong>ID:</strong> {{ DoctorData.id }}</p>
+  <p><strong>First Name:</strong> {{ DoctorData.firstName }}</p>
+  <p><strong>Last Name:</strong> {{ DoctorData.lastName }}</p>
+  <p><strong>Email:</strong> {{ DoctorData.email }}</p>
+    <h2>schedule your time :</h2><br><br>
     
 </div>
- <div>
-    <p>The patient  has requested for an appointment at </p>
-
- </div>
+ <button (click)="OnDocSchedule()">Schedule Time</button>

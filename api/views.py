@@ -24,10 +24,16 @@ class patientHealthDataViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         data = request.data
-        patient_instance, created = PatientHealthData.objects.get_or_create(**data)
+        patient_id = data.pop('patientID')
+        
+        patient_instance = Patient.objects.get(id=patient_id)
+        patient_health_data_instance, created = PatientHealthData.objects.get_or_create(patientID=patient_instance, **data)
+        
         predicted_data = pred.main(data)
-
-        result_data = {'patientID': reverse('patient-detail', kwargs={'pk': patient_instance.pk}, request=request),'attackRisk': int(predicted_data)}
+        result_data = {
+            'patientID': patient_id,
+            'attackRisk': int(predicted_data)
+        }
 
         result_serializer = ResultSerializer(data=result_data, context={'request': request})
         

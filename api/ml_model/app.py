@@ -3,7 +3,6 @@ import joblib
 import pandas as pd
 from dotenv import load_dotenv
 
-<<<<<<< HEAD
 load_dotenv()
 
 # Load the model and scaler
@@ -12,10 +11,6 @@ path_scaler = os.path.normpath(os.environ.get('PATH_SCALER'))
 
 model = joblib.load(path_model)
 scaler = joblib.load(path_scaler)
-=======
-scaler = joblib.load(r'api/ml_model/MinMaxScaler.joblib')
-model = joblib.load(r'api/ml_model/RandomForestClassifier.joblib')
->>>>>>> bb0df7b9 (from linux)
 
 class Prediction:
     def preprocessing(self, data):

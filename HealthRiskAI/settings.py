@@ -60,8 +60,12 @@ WSGI_APPLICATION = 'HealthRiskAI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'todoapp',
+        'USER': 'faisal',
+        'PASSWORD': '3JX7S1cw46D6YwNrUHmh',
+        'HOST': 'djangodb.c83dxhl2wyjt.ap-southeast-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 

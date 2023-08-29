@@ -6,7 +6,25 @@ load_dotenv()
 DEBUG = os.environ.get('DEBUG')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 ALLOWED_HOSTS = list(os.environ.get('DJANGO_ALLOWED_HOSTS'))
+DB_NAME = os.environ.get('DB_NAME')
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_HOST = os.environ.get('DB_HOST')
+DB_PORT = os.environ.get('DB_PORT')
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
+    }
+}
+
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",  # Add the domain of your Angular app here
@@ -58,16 +76,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'HealthRiskAI.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todoapp',
-        'USER': 'faisal',
-        'PASSWORD': '3JX7S1cw46D6YwNrUHmh',
-        'HOST': 'djangodb.c83dxhl2wyjt.ap-southeast-1.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
 
 
 AUTH_PASSWORD_VALIDATORS = [

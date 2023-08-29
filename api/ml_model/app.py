@@ -1,3 +1,4 @@
+import os
 import joblib
 import pandas as pd
 from dotenv import load_dotenv
@@ -5,8 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load the model and scaler
-path_model = os.path.normpath(PATH_MODEL)
-path_scaler = os.path.normpath(PATH_SCALER)
+path_model = os.path.normpath(os.environ.get('PATH_MODEL'))
+path_scaler = os.path.normpath(os.environ.get('PATH_SCALER'))
 
 model = joblib.load(path_model)
 scaler = joblib.load(path_scaler)

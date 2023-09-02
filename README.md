@@ -6,7 +6,7 @@ The HealthRiskAI App is designed to predict the risk of a heart attack using mac
 
 - Predicts heart attack risk based on input data.
 - User-friendly web interface.
-- Utilizes a pre-trained machine learning model.
+- Utilizes a pre-trained ml model.
 
 ## Requirements
 
@@ -75,10 +75,3 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 3. Click the "Predict" button to obtain the heart attack risk prediction.
 4. The app will display the prediction result along with relevant information.
 
-## Acknowledgments
-
-This app is powered by a pre-trained machine learning model based on scikit-learn. The app's interface is built using the Django framework.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
